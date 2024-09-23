@@ -94,6 +94,9 @@ public class SecurityConfig {
              * newSession():  Crea una nueva sesión al autenticarse y NO transfiere los atributos de la sesión original, NI SUS DATOS.
              * none(): Inhabilitar la seguridad, permite al atacante apropiarse de la session
              */
+            .httpBasic(httpBasic -> httpBasic // Configura la autenticación Basic.
+                .realmName("My App") // Configura el nombre del realm (opcional)
+        )
             .build(); // Retorna el objeto SecurityFilterChain configurado.
     }
 
